@@ -17,6 +17,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
 }
 
 /* SIDEBAR */
@@ -237,21 +238,23 @@ img#profile{
 .main-content {
     padding-left: var(--left-pad);
     padding-bottom: var(--bottom-pad);
+    padding-right: var(--right-pad);
     display : grid;
     grid-template-columns: minmax(200px, 3fr) 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    background-color: #a690a490;
+    row-gap: 1rem;
 }
 
-.main-content >  * {
+/* .main-content >  * {
     border: 1px solid black;
-}
+} */
 
 .main-cards {
     padding-left: var(--left-pad);
     grid-row: 1 / span 2;
     display : grid;
-    grid-template-rows: minmax(2rem, 5rem);
-    gap : 2rem;
+    grid-template-rows: min-content auto;
+
 }
 
 h3 {
@@ -264,15 +267,18 @@ h3 {
     padding :  1rem 2rem;
     box-shadow: 7px 2px 9px 2px rgba(0,0,0,0.2);
     border-left: 1rem solid var(--light-purple);
+    background-color: white;
+    
 
 }
 
 .projects-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    min-height: min(10vh, 20rem);
+    min-height: fit-content;
     gap : 2rem;
     padding-right: 2rem;
+    
 }
 
 h4 {
@@ -307,5 +313,41 @@ h4 + p {
 .projects-cards > div {
     gap : 2rem;
 }
+
+.side-content .card{
+    border-radius: 25px;
+    display : flex;
+    grid-template-rows: max-content;
+    min-height: fit-content;
+    background-color: white;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    font-size: 1.3rem;
+
+
+}
+
+.side-content {
+    padding: 0;
+    margin :0;
+}
+
+h5 {
+    font-size: 1.5rem;
+    margin : 0;
+}
+
+.side-content.top p {
+    border-bottom: 0.2rem solid rgba(0,0,0,0.41);
+    padding-bottom: 2rem;
+    max-height: 4rem;
+    overflow: hidden;
+}
+
+.side-content.top p:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
 
 
